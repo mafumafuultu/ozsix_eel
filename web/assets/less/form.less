@@ -1,0 +1,37 @@
+
+.formPad {
+	box-sizing: border-box;
+	padding: 0.3rem;
+}
+
+.formBorder{ 
+	border: solid 2px #666;
+	border-radius: 4px;
+	.formPad;
+}
+
+label {
+	&>span {
+		.formPad;
+	}
+	&>[type=radio][checked] {
+		&+span {
+			background: orange;
+		}
+	}
+}
+
+input {
+	.formBorder;
+}
+
+textarea {
+	.formBorder;
+	resize: vertical;
+	width: 100%;
+}
+
+select {
+	.formBorder;
+}
+

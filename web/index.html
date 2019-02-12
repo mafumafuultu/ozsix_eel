@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>OzSix</title>
+	<link rel="stylesheet" href="./assets/css/main.css">
+</head>
+<body>
+	<script src="./node_modules/losand/losand.js"></script>
+	<script src="./node_modules/dsand/dsand.js"></script>
+	<script src="./assets/js/main.es6"></script>
+	<script src="./assets/js/data.js"></script>
+	<script src="./assets/testdata/data.js"></script>
+	<script>
+	imports(
+		'./assets/modules/db.es6'
+	);
+
+
+	_($.role).draw({
+		pain: {
+			submit(e) {
+				console.log(e);
+				console.log($.form.postItem.get);
+			}
+		},
+		postinput: {
+			input(e, d) {
+				console.log(e,d);
+			}
+		}
+	});
+
+	body.id('ozsix')
+	.$(
+		div.id('leftpain').class('pain')
+		.$(
+			p.$('left topics list'),
+			topicList(...testTopic)
+		),
+		div.id('centerpain').class('pain')
+		.$(
+			div.id('viewPain').class('pain')
+			.$(
+				h1.$('アイデアノート'),
+				p.$('story pain'),
+				ul.id('story_board').class('gridList')
+				.$(...story(sampleStory))
+			),
+			form.id('postItem').class('pain').on('submit')
+			.$(
+				label.$(
+					span.$('Color'),
+					select.name('colorSelect').$(colorItem)
+				),
+				label.$(
+					span.$('Image'),
+					select.name('iamgeSelect').$(imageItem)
+				),
+				br,
+				textarea.name('postinput').id('postinput')
+				.set({
+					placeholder: 'input text',
+					autoComplete: 'off'
+				}).on('input')
+			)
+		),
+		div.id('rightpain').class('pain')
+		.$(
+			p.$('right charactor pain'),
+			ul.class('topics')
+			.$(...testText)
+		)
+	)
+	</script>
+</body>
+</html>

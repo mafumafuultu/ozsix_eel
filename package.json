@@ -1,0 +1,26 @@
+{
+  "name": "ozsix_eel",
+  "version": "0.0.1",
+  "description": "OzSix for Eel",
+  "main": "main.py",
+  "scripts": {
+    "less": "lessc -ru ./web/assets/less/main.less ./web/assets/css/main.css",
+    "lessw": "lessc -w-ru ./web/assets/less/main/less ./web/assets/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mafumafuultu/ozsix_eel.git"
+  },
+  "keywords": [
+    "eel",
+    "JavaScript",
+    "Python",
+    "Idea"
+  ],
+  "author": "mafumafuultu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mafumafuultu/ozsix_eel/issues"
+  },
+  "homepage": "https://github.com/mafumafuultu/ozsix_eel#readme"
+}
